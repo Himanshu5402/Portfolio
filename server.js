@@ -50,8 +50,8 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-// serve index.html
-app.get("/", (req, res) => {
+// serve index.html for all unmatched routes
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
