@@ -1,15 +1,28 @@
 
-function mousefollower(){
-    // var main = document.querySelector("#main");
+function mousefollower() {
+    var main = document.querySelector("#main");
 
-window.addEventListener("mousemove",function (dets) {
-    gsap.to("#cursor",{
-        x:dets.x,
-        y:dets.y
-    })
-});
+    main.addEventListener("mousemove", function (dets) {
+        gsap.to("#cursor", {
+            x: dets.x,
+            y: dets.y
+        })
+    });
 }
 mousefollower()
+
+const resumeBtn = document.getElementById("resume");
+const cursor = document.getElementById("cursor");
+
+resumeBtn.addEventListener("mouseenter", () => {
+    cursor.style.display = "none";
+    document.body.style.cursor = "pointer";
+});
+
+resumeBtn.addEventListener("mouseleave", () => {
+    cursor.style.display = "block";
+    document.body.style.cursor = "none";
+});
 
 window.addEventListener('scroll', function () {
     var header = document.querySelector('header');
@@ -26,19 +39,6 @@ function toggleMenu() {
     menu.classList.toggle('active')
 }
 
-
-
-function mousefollower() {
-    var main = document.querySelector("#main");
-
-    main.addEventListener("mousemove", function (dets) {
-        gsap.to("#cursor", {
-            x: dets.x,
-            y: dets.y
-        })
-    });
-}
-mousefollower()
 
 
 var tl = gsap.timeline()
@@ -169,3 +169,9 @@ function setTyper(element, words) {
 document.getElementById("SourceCode").addEventListener("click", function() {
     window.location.href = "https://github.com/Asynchronous-Javascriptor/Asynchronous-Javascriptor";
 });
+
+document.getElementById("resume").addEventListener("click", function() {
+    window.open("/files/Himanshu-Singh.pdf", "_blank");
+});
+
+

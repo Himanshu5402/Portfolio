@@ -132,6 +132,7 @@ header ul li a:hover {
   background: #2196f3;
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
   gap: 8px;
   /* text aur icon ke beech space */
@@ -143,7 +144,6 @@ header ul li a:hover {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
-  cursor: pointer;
 }
 
 /*section design*/
